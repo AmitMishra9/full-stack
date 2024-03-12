@@ -26,7 +26,7 @@ function Login() {
     
 
     try{
-      const response= await  axios.post("http://localhost:8000/api/v1/auth/login",values
+      const response= await  axios.post("https://full-stack-9aei.onrender.com/api/v1/auth/login",values
       );
     const jwt=response.data.token;
     localStorage.setItem("jwt",jwt);

@@ -20,12 +20,12 @@ const Home = () =>{
         throw new Error("No token found");
       }
   
-      const response = await fetch("http://localhost:8000/api/v1/blog/getBlogList",{
+      const response = await fetch("https://full-stack-9aei.onrender.com/api/v1/blog/getBlogList",{
         method: 'GET',
-        headers: {
-          "Authorization": `Bearer ${token}`,
+        // headers: {
+        //   "Authorization": `Bearer ${token}`,
            
-        },
+        // },
          
       });
   

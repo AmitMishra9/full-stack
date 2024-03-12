@@ -14,7 +14,7 @@ function Registration() {
 const onFinish= async(values)=>{
   console.log(values)
   try{
-    const response= await  axios.post("http://localhost:8000/api/v1/auth/rigester",values);
+    const response= await  axios.post("https://full-stack-9aei.onrender.com/api/v1/auth/rigester",values);
     message.success("User Registered successfully Please login in continew");
     form.resetFields();
     navigate("/");

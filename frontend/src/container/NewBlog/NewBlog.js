@@ -17,7 +17,7 @@ const NewBlog = () => {
     formData.append("createdBy", "65ef2a8a54f96577b2d203f8");
 
     //  try {
-    //   const response = await fetch("http://localhost:8000/api/v1/blog/createBlog", {
+    //   const response = await fetch("https://full-stack-9aei.onrender.com/api/v1/blog/createBlog", {
     //     method: "POST",
     //     body: values, // Assuming formData is already a FormData object
     //   });
@@ -38,7 +38,7 @@ const NewBlog = () => {
 
     try {
       const response = await axios.post(
-        "http://localhost:8000/api/v1/blog/createBlog",
+        "https://full-stack-9aei.onrender.com/api/v1/blog/createBlog",
         formData,
         {
           headers: {

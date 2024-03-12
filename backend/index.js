@@ -35,8 +35,8 @@ app.use(cors());
 
 
 
-/*Connecte , */
-app.use('/api/v1/blog',authmiddlewares,blogRouths);
+/*Connecte , authmiddlewares*/
+app.use('/api/v1/blog',blogRouths);
 app.use('/api/v1/auth',authRouths);
 
 

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom";
 
 
 const BlogCard = ({ blog }) => {
-  //console.log("http://localhost:8000" +blog.image)
+  //console.log("https://full-stack-9aei.onrender.com" +blog.image)
     return (
     <div className="blog-card">
       <Card
@@ -17,7 +17,7 @@ const BlogCard = ({ blog }) => {
         cover={
           
 
-          <img src={"http://localhost:8000"+blog.image} alt="example"/>}>
+          <img src={"https://full-stack-9aei.onrender.com"+blog.image} alt="example"/>}>
 
         <Meta
           avatar={<Avatar src="https://api.dicebear.com/7.x/miniavs/svg?seed=8" />}

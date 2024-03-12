@@ -1,22 +1,31 @@
 import { Navigate, useNavigate } from "react-router";
 import "./Header.scss";
 import { Layout, Menu } from "antd";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 //import { useState } from "react";
 const { Header: Navbar } = Layout;
 
 const Header = () => {
   const navigate = useNavigate();
-  //const[islogedin,setislogedin]=useState(localStorage.getItem('jwt'));
+  const[islogedin,setislogedin]=useState(false);
+  
+  useEffect(()=>{
+    if(localStorage.getItem('jwt')){
+       setislogedin(true);
+    }
+    else{
+      setislogedin(false);
+    }
+  },[])
 
 
  //const islogedin= localStorage.getItem('jwt');
   //console.log(islogedin);
- const menuItem=[
+ const menuItem=islogedin?[
    
     {
          key:"/",
-         label:"Login"
+         label:"Logout"
     },
     {
         key:"/home",
@@ -27,18 +36,32 @@ const Header = () => {
     label:"Create Blog",
    }
 
+ ] : [
+  {
+    key:"/",
+    label:"Login"
+},
+{
+   key:"/home",
+   label:"Home"
+},
+{
+key:"/create-blog",
+label:"Create Blog",
+}
+
  ];
 
  
   const onMenuClick = (e) => {
     console.log(e.key);
-  // if (e.key === "/login") {
-  //   setislogedin(false);
+  if (e.key === "/login") {
+    setislogedin(false);
    
-  //   navigate("/login"); // Redirect to the login page or any other appropriate route
-  // } else {
-  //   navigate(e.key);
-  // }
+    navigate("/login"); // Redirect to the login page or any other appropriate route
+  } else {
+    navigate(e.key);
+  }
     navigate(e.key);
   };
 
